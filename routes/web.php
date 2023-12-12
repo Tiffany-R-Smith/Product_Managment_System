@@ -31,6 +31,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth','role:admin'])->group (function(){
+    logger("We getting in here?");
     Route::get('/admin/dashboard',[AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
 });//End Group Admin Middleware
 
