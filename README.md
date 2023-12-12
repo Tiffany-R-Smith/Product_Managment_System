@@ -35,7 +35,7 @@ After cloning this repo:
 3. Run:
 
     ```bash
-    php artisan key generate
+    php artisan key:generate
     ```
 
 4. Install Laravel dependencies:
