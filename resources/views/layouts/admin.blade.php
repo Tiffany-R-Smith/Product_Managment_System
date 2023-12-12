@@ -17,13 +17,13 @@
     <body class="font-sans antialiased">
         <div class="relative min-h-screen md:flex" x-data="{ open: true }">
             <!-- Sidebar -->
-            <aside :class="{ '-translate-x-full': !open }" class="z-10 bg-blue-800 text-blue-100 w-64 px-2 py-4 absolute inset-y-0 left-0 md:relative transform md:translate-x-0
+            <aside :class="{ '-translate-x-full': !open }" class="z-10 bg-gray-800 text-gray-100 w-64 px-2 py-4 absolute inset-y-0 left-0 md:relative transform md:translate-x-0
                 overflow-y-auto transition ease-in-out duration-200 shadow-lg">
                 <!-- Logo -->
                 <div class="flex items-center justify-between px-2">
                     <div class="flex items-center space-x-2">
                         <a href="">
-                            <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                            <x-application-logo class="block h-9 w-auto fill-current text-white-800" />
                         </a>
                         <span class="text-2xl font-extrabold">Admin Dashboard</span>
                     </div>
@@ -40,7 +40,8 @@
                         Welcome back {{ Auth::user()->name }}!
                     </div>
 
-                    {{-- TODO: add more links here --}}
+                    <!--Place nav links here -->
+                    
 
                     <div class="">
                         <!-- Profile Link -->
@@ -64,7 +65,7 @@
             
             <!-- Main Content -->
             <main class="flex-1">
-                <nav class="bg-blue-900 shadow-lg">
+                <nav class="bg-gray-800 shadow-lg">
                     <div class="mx-auto px-2 sm:px-6 lg:px-8">
                         <div class="relative flex items-center justify-between md:justify-end h-16">
                             <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
