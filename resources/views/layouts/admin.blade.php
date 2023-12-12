@@ -35,12 +35,32 @@
                     </button>
                 </div>
                 <!-- Nav Links -->
-                <nav>
+                <nav class="flex flex-col">
+                    <div class="my-5">
+                        Welcome back {{ Auth::user()->name }}!
+                    </div>
 
+                    {{-- TODO: add more links here --}}
+
+                    <div class="">
+                        <!-- Profile Link -->
+                        <a href="{{ route('profile.edit') }}">
+                            {{ __('Profile') }}
+                        </a>
+                    
+                        <!-- Log Out Link -->
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <a href="{{ route('logout') }}"
+                               onclick="event.preventDefault(); this.closest('form').submit();">
+                                {{ __('Log Out') }}
+                            </a>
+                        </form>
+                    </div>
                 </nav>
             </aside>
 
-            {{-- TODO: here somewhere.... --}}
+            
             
             <!-- Main Content -->
             <main class="flex-1">
