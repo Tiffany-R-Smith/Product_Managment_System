@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use Illuminate\Support\Facades\Route;
@@ -21,8 +22,10 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('/dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/scheduleA', [ProductController::class, 'displayProducts'])->name('scheduleA');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
