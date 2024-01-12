@@ -59,34 +59,34 @@
                     </a>
                         <ul class="ml-6" x-show="open" x-cloak>
                             <li>
-                                <a href="/" class="text-gray-300 hover:bg-gray-700">Athleisure</a>
+                                <a href="{{ route('athleisureProducts') }}" class="text-gray-300 hover:bg-gray-700">Athleisure</a>
                             </li>
                             <li>
-                                <a href="/" class="text-gray-300 hover:bg-gray-700">College</a>
+                                <a href="{{ route('collegeProducts') }}" class="text-gray-300 hover:bg-gray-700">College</a>
                             </li>
                             <li>
-                                <a href="/" class="text-gray-300 hover:bg-gray-700">Entertainment</a>
+                                <a href="{{ route('entertainmentProducts') }}" class="text-gray-300 hover:bg-gray-700">Entertainment</a>
                             </li>
                             <li>
-                                <a href="/" class="text-gray-300 hover:bg-gray-700">Military</a>
+                                <a href="{{ route('militaryProducts') }}" class="text-gray-300 hover:bg-gray-700">Military</a>
                             </li>
                             <li>
-                                <a href="/" class="text-gray-300 hover:bg-gray-700">MLB</a>
+                                <a href="{{ route('mlbProducts') }}" class="text-gray-300 hover:bg-gray-700">MLB</a>
                             </li>
                             <li>
-                                <a href="/" class="text-gray-300 hover:bg-gray-700">NBA</a>
+                                <a href="{{ route('nbaProducts') }}" class="text-gray-300 hover:bg-gray-700">NBA</a>
                             </li>
                             <li>
-                                <a href="/" class="text-gray-300 hover:bg-gray-700">NFL</a>
+                                <a href="{{ route('nflProducts') }}" class="text-gray-300 hover:bg-gray-700">NFL</a>
                             </li>
                             <li>
-                                <a href="/" class="text-gray-300 hover:bg-gray-700">NHL</a>
+                                <a href="{{ route('nhlProducts') }}" class="text-gray-300 hover:bg-gray-700">NHL</a>
                             </li>
                             <li>
-                                <a href="/" class="text-gray-300 hover:bg-gray-700">Generic</a>
+                                <a href="{{ route('genericProducts') }}" class="text-gray-300 hover:bg-gray-700">Generic</a>
                             </li>
                             <li>
-                                <a href="/" class="text-gray-300 hover:bg-gray-700">Personalization</a>
+                                <a href="{{ route('personalizationProducts') }}" class="text-gray-300 hover:bg-gray-700">Personalization</a>
                             </li>
 
                                 <!-- Add more sub-links as needed -->

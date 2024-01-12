@@ -26,6 +26,17 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/scheduleA', [ProductController::class, 'displayProducts'])->name('scheduleA');
+Route::get('/collegeProducts', [ProductController::class, 'collegeProducts'])->name('collegeProducts');
+Route::get('/athleisureProducts', [ProductController::class, 'athleisureProducts'])->name('athleisureProducts');
+Route::get('/entertainmentProducts', [ProductController::class, 'entertainmentProducts'])->name('entertainmentProducts');
+Route::get('/militaryProducts', [ProductController::class, 'militaryProducts'])->name('militaryProducts');
+Route::get('/mlbProducts', [ProductController::class, 'mlbProducts'])->name('mlbProducts');
+Route::get('/nbaProducts', [ProductController::class, 'nbaProducts'])->name('nbaProducts');
+Route::get('/nflProducts', [ProductController::class, 'nflProducts'])->name('nflProducts');
+Route::get('/nhlProducts', [ProductController::class, 'nhlProducts'])->name('nhlProducts');
+Route::get('/genericProducts', [ProductController::class, 'genericProducts'])->name('genericProducts');
+Route::get('/personalizationProducts', [ProductController::class, 'personalizationProducts'])->name('personalizationProducts');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
