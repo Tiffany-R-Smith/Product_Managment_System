@@ -4,7 +4,6 @@
             {{ __('Admin Dashboard') }}
         </h2>
     </x-slot>
-
     <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8" style="padding-top: 0;">
     <div class="bg-gray-100 overflow-hidden shadow-sm sm:rounded-lg" style="width: calc(100% + 200px); overflow-x: auto; margin-left: -200px; padding-right: 200px;">
@@ -33,7 +32,7 @@
                                 @foreach($products as $product)
                                 <tr>
                                     <td style="padding: 8px; border: 1px solid #ccc; white-space: nowrap;">{{ $product->id }}</td>
-                                    <td style="padding: 8px; border: 1px solid #ccc; white-space: nowrap;">{{ $product->timestamps }}</td>
+                                    <td style="padding: 8px; border: 1px solid #ccc; white-space: nowrap;">{{ $product->created_at }}</td>
                                     <td style="padding: 8px; border: 1px solid #ccc; white-space: nowrap;">{{ $product->license_type }}</td>
                                     <td style="padding: 8px; border: 1px solid #ccc; white-space: nowrap;">{{ $product->license}}</td>
                                     <td style="padding: 8px; border: 1px solid #ccc; white-space: nowrap;">{{ $product->style }}</td>
