@@ -1,75 +1,96 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Product;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function displayProducts()
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
     {
         $products = Product::all(); // Fetch products from the 'products' table (adjust if needed)
-        return view('admin.scheduleA')->with('products', $products);
+        $licenseTypes = array(
+            'athleisureProducts' => 'Athleisure',
+            'collegeProducts' => 'College',
+            'entertainmentProducts' => 'Entertainment',
+            'militaryProducts' => 'Military',
+            'mlbProducts' => 'MLB',
+            'nbaProducts' => 'NBA',
+            'nflProducts' => 'NFL',
+            'nhlProducts' => 'NHL',
+            'genericProducts' => 'Generic',
+            'personalizationProducts' => 'Personalization',
+            // Add more route names and corresponding HTML text values as needed
+        );
+
+        return view('admin.product')->with(['products' => $products, 'licenseTypes' => $licenseTypes]);
     }
 
-    public function collegeProducts()
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
     {
-        $collegeProducts = Product::where('license_type', 'like', '%College%')->get();
-        return view('admin.scheduleA')->with('products', $collegeProducts);
+        //
     }
 
-    public function athleisureProducts()
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
     {
-        $athleisureProducts = Product::where('license_type', 'like', '%Athleisure%')->get();
-        return view('admin.scheduleA')->with('products', $athleisureProducts);
+        //
     }
 
-    public function entertainmentProducts()
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
     {
-        $entertainmentProducts = Product::where('license_type', 'like', '%Entertainment%')->get();
-        return view('admin.scheduleA')->with('products', $entertainmentProducts);
+        //
     }
 
-    public function militaryProducts()
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
     {
-        $militaryProducts = Product::where('license_type', 'like', '%Military%')->get();
-        return view('admin.scheduleA')->with('products', $militaryProducts);
+        //
     }
 
-    public function mlbProducts()
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
     {
-        $mlbProducts = Product::where('license_type', 'like', '%MLB%')->get();
-        return view('admin.scheduleA')->with('products', $mlbProducts);
+        //
     }
 
-    public function nbaProducts()
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
     {
-        $nbaProducts = Product::where('license_type', 'like', '%NBA%')->get();
-        return view('admin.scheduleA')->with('products', $nbaProducts);
+        //
     }
 
-    public function nflProducts()
+    /**
+     * 
+     */
+    public function import()
     {
-        $nflProducts = Product::where('license_type', 'like', '%NFL%')->get();
-        return view('admin.scheduleA')->with('products', $nflProducts);
+        //
     }
 
-    public function nhlProducts()
+    /**
+     * 
+     */
+    public function export()
     {
-        $nhlProducts = Product::where('license_type', 'like', '%NHL%')->get();
-        return view('admin.scheduleA')->with('products', $nhlProducts);
-    }
 
-    public function genericProducts()
-    {
-        $genericProducts = Product::where('license_type', 'like', '%Generic%')->get();
-        return view('admin.scheduleA')->with('products', $genericProducts);
-    }
-
-    public function personalizationProducts()
-    {
-        $personalizationProducts = Product::where('license_type', 'like', '%Personalization%')->get();
-        return view('admin.scheduleA')->with('products', $personalizationProducts);
     }
 }

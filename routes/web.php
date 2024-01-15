@@ -44,13 +44,19 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware(['auth','role:admin'])->group (function(){
-    Route::get('/admin/dashboard',[AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
-});//End Group Admin Middleware
+// Begin Group Admin middleware
+// If the user logged in has the role of admin then....
+Route::middleware(['auth','role:admin'])->group (function() {
+    // ....let's load the dashboard showing all the products
+    Route::get('/admin/dashboard', [ProductController::class, 'index'])->name('admin.product');
+});
+//End Group Admin Middleware
 
-Route::middleware(['auth', 'role:agent'])->group (function(){
+// Begin Group Agent middleware
+Route::middleware(['auth', 'role:agent'])->group (function() {
     Route::get('/agent/dashboard',[AgentController::class, 'AgentDashboard'])->name('agent.dashboard');
-});//End Group Agent Middleware
+});
+//End Group Agent Middleware
 
 
 
