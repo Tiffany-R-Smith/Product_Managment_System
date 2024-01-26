@@ -21,5 +21,7 @@ class Product extends Model
         'is_depleting',
         'price',
         'freight',
+        'description',
+        'country',
     ];
 }

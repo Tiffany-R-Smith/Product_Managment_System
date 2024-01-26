@@ -157,9 +157,8 @@
                 </ul>
             </nav>
         </header>
-        
-<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <div class="flex items-center justify-between flex-column md:flex-row flex-wrap space-y-4 md:space-y-0 py-4 bg-white dark:bg-gray-900">
+        <div x-data="{ isAllChecked: false }" class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <div class="flex items-center justify-between flex-column md:flex-row flex-wrap space-y-4 md:space-y-0 py-4 bg-slate-800">
         <div>
             <button id="dropdownActionButton" data-dropdown-toggle="dropdownAction" class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-3 py-1.5 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
                 <span class="sr-only">Action button</span>
@@ -170,6 +169,7 @@
             </button>
             <!-- Dropdown menu -->
             <div id="dropdownAction" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                <!-- Dropdown content here -->
                 <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownActionButton">
                     <li>
                         <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Reward</a>
@@ -186,6 +186,7 @@
                 </div>
             </div>
         </div>
+
         <label for="table-search" class="sr-only">Search</label>
         <div class="relative">
             <div class="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -193,19 +194,20 @@
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                 </svg>
             </div>
-            <input type="text" id="table-search-users" class="block pt-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search for users">
+            <input type="text" id="table-search-users" class="block pt-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search">
         </div>
     </div>
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    
+    <table class="w-full text-md text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xl font-extrabold dark:text-white">
             <tr>
                 <th scope="col" class="p-4">
                     <div class="flex items-center">
-                        <input id="checkbox-all-search" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                        <input id="checkbox-all-search" type="checkbox" x-model="isAllChecked" @click="toggleCheckboxes" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                         <label for="checkbox-all-search" class="sr-only">checkbox</label>
                     </div>
                 </th>
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-6 py-3 pl-40 ">
                     Product
                 </th>
                 <th scope="col" class="px-6 py-3">
@@ -223,43 +225,48 @@
             </tr>
         </thead>
         <tbody>
-    @foreach($products as $product)
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-            <td class="w-4 p-4">
-                <div class="flex items-center">
-                    <input id="checkbox-table-search-{{ $loop->index + 1 }}" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                    <label for="checkbox-table-search-{{ $loop->index + 1 }}" class="sr-only">checkbox</label>
-                </div>
-            </td>
-            <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                <img class="w-10 h-10 rounded-full" src="/docs/images/people/profile-picture-{{ $loop->index + 1 }}.jpg" alt="Image">
+            @foreach($products as $product)
+                <tr class="bg-gray-400 border-b hover:bg-gray-50">
+                    <td class="w-4 p-4">
+                        <div class="flex items-center">
+                            <input id="checkbox-table-search-{{ $loop->index + 1 }}" type="checkbox" x-model="isAllChecked" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <label for="checkbox-table-search-{{ $loop->index + 1 }}" class="sr-only">checkbox</label>
+                        </div>
+                    </td>
+                    <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <img class="h-auto max-w-xs" src="{{ asset('images/Artdisk/1YLS019000001RET.jpg') }}" alt="Image">
                 <div class="ps-3">
-                    <div class="text-base font-semibold">{{ $product->team }}</div>
-                    <div class="font-normal text-gray-500">{{ $product->style_description }}</div>
+                    <div class="font-semibold text-gray-900">{{ $product->setup_name}}</div>
+                    <div class="font-normal text-gray-900">Design: {{ $product->style_description }}</div>
+                    <div class="font-normal text-gray-900">@if (isset($product->license) && $product->license !== '')
+                        License: {{ $product->license }}
+                        @endif
+                    </div>
+                    <div class="font-normal text-gray-900">Country: {{ $product->country }}</div>
                 </div>
             </th>
-            <td class="px-6 py-4">
-                {{ $product->product_description }}
+            <td class="px-6 py-4 h-40 text-gray-900">
+                {{ $product->description }}
             </td>
-            <td class="px-6 py-4">
+            <td class="px-6 py-4 text-gray-900">
                 <div class="flex items-center">
                     <div class="whitespace-nowrap">{{ $product->sku }}</div>
                 </div>
             </td>
-            <td class="px-6 py-4">
-                <div class="flex items-center whitespace-nowrap">
-                    {{ $product->upc }}
+            <td class="px-6 py-4 text-gray-900">
+                <div class="flex items-center">
+                    <div class="whitespace-nowrap">{{ $product->upc }}</div>
                 </div>
             </td>
             <td class="px-6 py-4">
                 <!-- Modal toggle -->
                 <a href="#" type="button" data-modal-show="editUserModal" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
             </td>
-        </tr>
-    @endforeach
-</tbody>
-
+                </tr>
+            @endforeach
+        </tbody>
     </table>
+</div>
     <!-- Edit user modal -->
     <div id="editUserModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 items-center justify-center hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative w-full max-w-2xl max-h-full">
