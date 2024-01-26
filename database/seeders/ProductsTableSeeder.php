@@ -15,7 +15,7 @@ class ProductsTableSeeder extends Seeder
     {
         DB::table('products')->insert([
             [
-                'license_type' => 'Athliesure',
+                'license_type' => 'Athleisure',
                 'license' => 'Realtree',
                 'style' => 'BR4',
                 'design_name' => 'Realtree',
@@ -24,9 +24,11 @@ class ProductsTableSeeder extends Seeder
                 'sku' => '3RLT/BR400/1000/RET',
                 'short_upc' => '341187',
                 'upc' => '190604341187',
-                'setup_name' => "Realtree Women's"."Long Line Tank Sports Bra",
+                'setup_name' => "Realtree Women\'s Long Line Tank Sports Bra",
                 'price' => '25.75',
                 'freight' => '9.08',
+                'description' => 'Women\'s Realtree Longline Tank Sports Bra is the perfect addition to your wardrobe, use it in your daily life as well as for sports and fitness. With full coverage and moisture-wicking fabric, it will keep you cool, dry and comfortable',
+                'country' => 'China',
             ],
             [
                 'license_type' => 'College',
@@ -41,6 +43,9 @@ class ProductsTableSeeder extends Seeder
                 'setup_name' => 'NCAA Georgia Upward Jacquard Beach Towel',
                 'price' => '20.00',
                 'freight' => '11.08',
+                'description' => 'Enjoy those sunny days at the pool or beach with an Officially Licensed NCAA "Upward" Jacquard Beach Towel by TheNorthwest. Designed around your favorite college team, this large and absorbent 36"x 72" towel features your team\'s logo placed between diagonal stripes with the team name in the top corner, laid out vertically. Bring this soft and cozy towel to dry off after a nice dip in the water and show off your team support!',
+                'country' => 'USA',
+
             ],
             [
                 'license_type' => 'Entertainment',
@@ -55,6 +60,8 @@ class ProductsTableSeeder extends Seeder
                 'setup_name' => 'Yellowstone Dutton Ranch Woven Jacquard Throw',
                 'price' => '23.50',
                 'freight' => '9.42',
+                'description' => 'Add a piece of the Dutton Ranch to any room with a Yellowstone Woven Jacquard Throw Blanket by TheNorthwest. This decorative fringed throw is the perfect accessory for your home or office. Featuring a horse above Dutton Ranch Est. 1886 on a neutral background, this 46"x 60" jacquard is the ideal decoration for any room. It uses a weaving process to capture the brightness and vividness of the colors, while creating a high-quality throw. Made in USA, this throw features amazing colors and graphics.',
+                'country' => 'USA',
             ],
             [
                 'license_type' => 'Generic',
@@ -69,6 +76,8 @@ class ProductsTableSeeder extends Seeder
                 'setup_name' => 'Chinese New Year Floral Tapestry Throw',
                 'price' => '20.00',
                 'freight' => '7.45',
+                'description' => 'Embrace cozy elegance with our "Chinese New Year Floral" Woven Tapestry Throw Blanket. Detailed, woven and made from 100% Polyester with decorative fringes that gracefully adorn all edges. Whether draped over your bedroom furniture, elegantly displayed in your living space, utilized as an office accent, or hung as a statement wall decoration, it effortlessly enhances the style of any room.',
+                'country' => 'USA',
             ],
             [
                 'license_type' => 'Military',
@@ -83,6 +92,8 @@ class ProductsTableSeeder extends Seeder
                 'setup_name' => 'Operation Hat Trick Honor and Defense Mink Sherpa Throw',
                 'price' => '51.00',
                 'freight' => '9.24',
+                'description' => 'Celebrate your patriotism and support a meaningful cause with this Operation Hat Trick Silk Touch Mink Sherpa Throw Blanket. This extraordinary blanket combines silky softness with plush mink and the cozy warmth of sherpa fabric. Whether you\'re snuggling up on the couch, cheering on your favorite team at a chilly game, or looking for a thoughtful gift, our Operation Hat Trick Silk Touch Mink Sherpa Throw Blanket is a purchase that brings both comfort and purpose.',
+                'country' => 'China',
             ],
             [
                 'license_type' => 'MLB',
@@ -97,6 +108,8 @@ class ProductsTableSeeder extends Seeder
                 'setup_name' => 'Angels Campaign Fleece Throw',
                 'price' => '10.75',
                 'freight' => '6.15',
+                'description' => 'Campaign for your favorite team with an Officially Licensed MLB Fleece Throw Blanket by TheNorthwest. It\'s the perfect gift or accessory for any fan. Featuring a bold team name diagonally across the throw above the team logo in front of a circle design, this 50"x 60" fleece is sure to stand out. With whipstitch around all the edges, this soft throw will keep you warm on the couch or in the bedroom while watching your favorite team play.',
+                'country' => 'China',
             ],
             [
                 'license_type' => 'NBA',
@@ -111,6 +124,9 @@ class ProductsTableSeeder extends Seeder
                 'setup_name' => 'NBA Bucks Basketball Mickey Hugger Pillow and Silk Touch Throw Set',
                 'price' => '18.50',
                 'freight' => '8.15',
+                'description' => 'Grab an NBA & Disney Cobranded Character Hugger Pillow & Silk Touch Throw Set by TheNorthwest and head to the game! This gift set is the perfect road trip or travel accessory. The 40"x 50" silky-soft and cozy throw features a repeating print of NBA team logos and Mickey. The 16" Mickey Mouse character pillow is wearing a basketball jersey and shorts. Hug your favorite character while repping your team with this pillow & throw set!',
+                'country' => 'China',
+
             ],
             [
                 'license_type' => 'NFL',
@@ -125,6 +141,8 @@ class ProductsTableSeeder extends Seeder
                 'setup_name' => 'NFL Bears Play Action Fan Towel',
                 'price' => '19.60',
                 'freight' => '10',
+                'description' => 'Get ready to level up your game day gear with the NFL "Play Action" Fan Towel. Measuring a convenient 25" W x 16" L and proudly featuring NFL team\'s name, logo, helmet, and slogan - all showcased in your team\'s signature colors. Crafted from high-quality 100% polyester, it\'s designed to withstand every touchdown celebration and victory dance. Rally behind your team like never before!',
+                'country' => 'China',
             ],
             [
                 'license_type' => 'NHL',
@@ -139,6 +157,8 @@ class ProductsTableSeeder extends Seeder
                 'setup_name' => 'NHL Canadiens Hexagon Twin Comforter Set',
                 'price' => '36.00',
                 'freight' => '9.08',
+                'description' => 'Drift off to sleep in this fun and vibrant Officially Licensed NHL "Hexagon" Twin Comforter & Sham Set by TheNorthwest. This super soft and cozy set features your favorite hockey team\'s name, logo and location designed in geometric shapes on a team color background. The shams are featured in a contrasting color. Dream about the ball game with this 64"x 86" comforter and 24"x 30" sham set. You will never want to get out of bed!',
+                'country' => 'China',
             ],
             [
                 'license_type' => 'Personalization',
@@ -153,6 +173,8 @@ class ProductsTableSeeder extends Seeder
                 'setup_name' => 'NFL Snipe Bears Personalized Robe',
                 'price' => '39.95',
                 'freight' => '9.08',
+                'description' => 'This Silk Touch Adult Personalized Bath Robe is the ultimate addition to your loungewear collection. This bathrobe is designed with an amazingly silky-soft material that feels luxurious against your skin, making it perfect for relaxing at home. Featuring your favorite NHL team\'s name and logo, this bathrobe is the perfect way to show off your team spirit while enjoying the ultimate in comfort. The personalized design of the bathrobe makes it a unique and thoughtful gift for any hockey fan.',
+                'country' => 'Manufactured in USA of Imported Materials',
             ],
 
         ]);
