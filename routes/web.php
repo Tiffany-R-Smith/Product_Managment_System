@@ -25,6 +25,10 @@ Route::get('/dashboard', function () {
     return view('/dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/previous', function () {
+    return redirect()->back();
+})->name('previous');
+
 Route::get('/scheduleA', [ProductController::class, 'displayProducts'])->name('scheduleA');
 Route::get('/collegeProducts', [ProductController::class, 'collegeProducts'])->name('collegeProducts');
 Route::get('/athleisureProducts', [ProductController::class, 'athleisureProducts'])->name('athleisureProducts');
@@ -37,6 +41,7 @@ Route::get('/nhlProducts', [ProductController::class, 'nhlProducts'])->name('nhl
 Route::get('/genericProducts', [ProductController::class, 'genericProducts'])->name('genericProducts');
 Route::get('/personalizationProducts', [ProductController::class, 'personalizationProducts'])->name('personalizationProducts');
 
+Route::get('/admin/products/{product}', [ProductController::class, 'show'])->name('admin.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
