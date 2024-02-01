@@ -23,5 +23,10 @@ class Product extends Model
         'freight',
         'description',
         'country',
+        'detail_1',
+        'detail_2',
+        'size',
+        'care_instructions',
+        'contents',
     ];
 }

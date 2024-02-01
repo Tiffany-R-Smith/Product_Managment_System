@@ -245,7 +245,7 @@
                     <div class="font-normal text-gray-900">Country: {{ $product->country }}</div>
                 </div>
             </th>
-            <td class="px-6 py-4 h-40 text-gray-900">
+            <td class="px-3 py-4 h-40 text-gray-900">
                 {{ $product->description }}
             </td>
             <td class="px-6 py-4 text-gray-900">
@@ -260,7 +260,7 @@
             </td>
             <td class="px-6 py-4">
                 <!-- Modal toggle -->
-                <a href="#" type="button" data-modal-show="editUserModal" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                <a href="{{ route('admin.show', ['product' => $product->id]) }}" type="button" data-modal-show="editUserModal" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
             </td>
                 </tr>
             @endforeach

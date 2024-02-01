@@ -72,4 +72,9 @@ class ProductController extends Controller
         $personalizationProducts = Product::where('license_type', 'like', '%Personalization%')->get();
         return view('admin.index')->with('products', $personalizationProducts);
     }
+
+    public function show(Product $product)
+    {
+        return view('admin.show', ['product' => $product]);
+    }
 }
